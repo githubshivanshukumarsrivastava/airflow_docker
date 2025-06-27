@@ -39,7 +39,7 @@ with DAG(
     # task1.set_downstream(task3)
 
     # Task dependency method 2
-    # task1 >> task2
+    #task1 >> task2
     # task1 >> task3
 
     # Task dependency method 3

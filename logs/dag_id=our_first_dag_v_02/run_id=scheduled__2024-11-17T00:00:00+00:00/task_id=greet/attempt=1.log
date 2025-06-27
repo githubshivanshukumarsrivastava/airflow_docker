@@ -1,0 +1,14 @@
+[2025-06-27T16:14:21.502+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: our_first_dag_v_02.greet scheduled__2024-11-17T00:00:00+00:00 [queued]>
+[2025-06-27T16:14:21.563+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: our_first_dag_v_02.greet scheduled__2024-11-17T00:00:00+00:00 [queued]>
+[2025-06-27T16:14:21.565+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 6
+[2025-06-27T16:14:21.770+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): greet> on 2024-11-17 00:00:00+00:00
+[2025-06-27T16:14:21.847+0000] {standard_task_runner.py:57} INFO - Started process 2214 to run task
+[2025-06-27T16:14:21.924+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'our_first_dag_v_02', 'greet', 'scheduled__2024-11-17T00:00:00+00:00', '--job-id', '961', '--raw', '--subdir', 'DAGS_FOLDER/create_dag_with_python_0perator.py', '--cfg-path', '/tmp/tmpvo3wnmy3']
+[2025-06-27T16:14:22.031+0000] {standard_task_runner.py:85} INFO - Job 961: Subtask greet
+[2025-06-27T16:14:22.384+0000] {task_command.py:416} INFO - Running <TaskInstance: our_first_dag_v_02.greet scheduled__2024-11-17T00:00:00+00:00 [running]> on host a8edfe6283f3
+[2025-06-27T16:14:22.871+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='shivanshu' AIRFLOW_CTX_DAG_ID='our_first_dag_v_02' AIRFLOW_CTX_TASK_ID='greet' AIRFLOW_CTX_EXECUTION_DATE='2024-11-17T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-17T00:00:00+00:00'
+[2025-06-27T16:14:22.873+0000] {logging_mixin.py:151} INFO - hello world! my name is {name}, and I am 20 years old!
+[2025-06-27T16:14:22.873+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-06-27T16:14:22.981+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=our_first_dag_v_02, task_id=greet, execution_date=20241117T000000, start_date=20250627T161421, end_date=20250627T161422
+[2025-06-27T16:14:23.171+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-06-27T16:14:23.235+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
