@@ -1,0 +1,13 @@
+[2025-06-28T10:45:18.330+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: our_first_dag_v_01.get_name scheduled__2025-06-27T00:00:00+00:00 [queued]>
+[2025-06-28T10:45:18.345+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: our_first_dag_v_01.get_name scheduled__2025-06-27T00:00:00+00:00 [queued]>
+[2025-06-28T10:45:18.345+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 6
+[2025-06-28T10:45:18.368+0000] {taskinstance.py:1382} INFO - Executing <Task(_PythonDecoratedOperator): get_name> on 2025-06-27 00:00:00+00:00
+[2025-06-28T10:45:18.377+0000] {standard_task_runner.py:57} INFO - Started process 671 to run task
+[2025-06-28T10:45:18.383+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'our_first_dag_v_01', 'get_name', 'scheduled__2025-06-27T00:00:00+00:00', '--job-id', '1749', '--raw', '--subdir', 'DAGS_FOLDER/dag_with_taskflow_api.py', '--cfg-path', '/tmp/tmpe3lvuz6i']
+[2025-06-28T10:45:18.388+0000] {standard_task_runner.py:85} INFO - Job 1749: Subtask get_name
+[2025-06-28T10:45:18.480+0000] {task_command.py:416} INFO - Running <TaskInstance: our_first_dag_v_01.get_name scheduled__2025-06-27T00:00:00+00:00 [running]> on host 07a96c95014f
+[2025-06-28T10:45:18.650+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='shivanshu' AIRFLOW_CTX_DAG_ID='our_first_dag_v_01' AIRFLOW_CTX_TASK_ID='get_name' AIRFLOW_CTX_EXECUTION_DATE='2025-06-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-06-27T00:00:00+00:00'
+[2025-06-28T10:45:18.651+0000] {python.py:194} INFO - Done. Returned value was: {'first_name': 'shiv', 'last_name': 'srivastava'}
+[2025-06-28T10:45:18.690+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=our_first_dag_v_01, task_id=get_name, execution_date=20250627T000000, start_date=20250628T104518, end_date=20250628T104518
+[2025-06-28T10:45:18.729+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-06-28T10:45:18.788+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check
