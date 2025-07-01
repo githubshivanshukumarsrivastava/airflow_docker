@@ -1,0 +1,19 @@
+[2025-06-30T18:22:25.415+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-30T18:22:25.677+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_with_python_dependencies_v01.get_sklearn scheduled__2025-01-01T00:00:00+00:00 [queued]>
+[2025-06-30T18:22:25.753+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_with_python_dependencies_v01.get_sklearn scheduled__2025-01-01T00:00:00+00:00 [queued]>
+[2025-06-30T18:22:25.757+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 1
+[2025-06-30T18:22:26.020+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): get_sklearn> on 2025-01-01 00:00:00+00:00
+[2025-06-30T18:22:26.069+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=2064) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-06-30T18:22:26.083+0000] {standard_task_runner.py:63} INFO - Started process 2085 to run task
+[2025-06-30T18:22:26.109+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dag_with_python_dependencies_v01', 'get_sklearn', 'scheduled__2025-01-01T00:00:00+00:00', '--job-id', '5623', '--raw', '--subdir', 'DAGS_FOLDER/dag_with_python_dependencies.py', '--cfg-path', '/tmp/tmphhgjhpmz']
+[2025-06-30T18:22:26.134+0000] {standard_task_runner.py:91} INFO - Job 5623: Subtask get_sklearn
+[2025-06-30T18:22:26.351+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_with_python_dependencies_v01.get_sklearn scheduled__2025-01-01T00:00:00+00:00 [running]> on host 98bcb8e24950
+[2025-06-30T18:22:26.874+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='shivanshu' AIRFLOW_CTX_DAG_ID='dag_with_python_dependencies_v01' AIRFLOW_CTX_TASK_ID='get_sklearn' AIRFLOW_CTX_EXECUTION_DATE='2025-01-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-01-01T00:00:00+00:00'
+[2025-06-30T18:22:26.875+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-30T18:22:36.425+0000] {logging_mixin.py:188} INFO - sklearn with version: 1.7.0 
+[2025-06-30T18:22:36.428+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-06-30T18:22:36.432+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-30T18:22:36.489+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=dag_with_python_dependencies_v01, task_id=get_sklearn, execution_date=20250101T000000, start_date=20250630T182225, end_date=20250630T182236
+[2025-06-30T18:22:37.014+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-06-30T18:22:37.109+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-30T18:22:37.116+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

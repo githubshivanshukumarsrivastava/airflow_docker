@@ -1,0 +1,9 @@
+[2025-06-28T11:36:13.024+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_with_taskflow_api_v02.get_name scheduled__2025-02-09T00:00:00+00:00 [queued]>
+[2025-06-28T11:36:14.051+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_with_taskflow_api_v02.get_name scheduled__2025-02-09T00:00:00+00:00 [queued]>
+[2025-06-28T11:36:14.073+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 6
+[2025-06-28T11:36:14.358+0000] {taskinstance.py:1382} INFO - Executing <Task(_PythonDecoratedOperator): get_name> on 2025-02-09 00:00:00+00:00
+[2025-06-28T11:36:14.973+0000] {standard_task_runner.py:57} INFO - Started process 10046 to run task
+[2025-06-28T11:36:15.216+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'dag_with_taskflow_api_v02', 'get_name', 'scheduled__2025-02-09T00:00:00+00:00', '--job-id', '5417', '--raw', '--subdir', 'DAGS_FOLDER/dag_with_taskflow_api.py', '--cfg-path', '/tmp/tmp5xjn9vnb']
+[2025-06-28T11:36:15.314+0000] {standard_task_runner.py:85} INFO - Job 5417: Subtask get_name
+[2025-06-28T11:36:18.799+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-06-28T11:36:19.087+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

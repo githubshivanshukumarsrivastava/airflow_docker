@@ -1,0 +1,22 @@
+[2025-06-29T15:21:05.950+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-29T15:21:12.840+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_with_python_dependencies_v01.get_sklearn scheduled__2022-05-26T00:00:00+00:00 [queued]>
+[2025-06-29T15:21:13.603+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_with_python_dependencies_v01.get_sklearn scheduled__2022-05-26T00:00:00+00:00 [queued]>
+[2025-06-29T15:21:13.729+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 1
+[2025-06-29T15:21:21.028+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): get_sklearn> on 2022-05-26 00:00:00+00:00
+[2025-06-29T15:21:27.968+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=235) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-06-29T15:21:24.230+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dag_with_python_dependencies_v01', 'get_sklearn', 'scheduled__2022-05-26T00:00:00+00:00', '--job-id', '4572', '--raw', '--subdir', 'DAGS_FOLDER/dag_with_python_dependencies.py', '--cfg-path', '/tmp/tmp8ls50btt']
+[2025-06-29T15:21:28.384+0000] {standard_task_runner.py:63} INFO - Started process 255 to run task
+[2025-06-29T15:21:28.370+0000] {standard_task_runner.py:91} INFO - Job 4572: Subtask get_sklearn
+[2025-06-29T15:21:52.325+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_with_python_dependencies_v01.get_sklearn scheduled__2022-05-26T00:00:00+00:00 [running]> on host 10ba4c57dcb8
+[2025-06-29T15:26:29.180+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='shivanshu' AIRFLOW_CTX_DAG_ID='dag_with_python_dependencies_v01' AIRFLOW_CTX_TASK_ID='get_sklearn' AIRFLOW_CTX_EXECUTION_DATE='2022-05-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2022-05-26T00:00:00+00:00'
+[2025-06-29T15:26:32.136+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-29T15:26:42.596+0000] {local_task_job_runner.py:310} WARNING - State of this instance has been externally set to None. Terminating instance.
+[2025-06-29T15:26:47.580+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-06-29T15:26:50.089+0000] {process_utils.py:132} INFO - Sending 15 to group 255. PIDs of all processes in the group: [255]
+[2025-06-29T15:26:50.522+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 255
+[2025-06-29T15:26:54.264+0000] {taskinstance.py:2607} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-06-29T15:26:56.929+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-29T15:27:53.587+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=255, name='airflow task ru', status='running', started='15:21:21') did not respond to SIGTERM. Trying SIGKILL
+[2025-06-29T15:27:59.162+0000] {process_utils.py:87} INFO - Sending the signal 9 to group 255
+[2025-06-29T15:28:02.080+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=255, name='airflow task ru', status='terminated', exitcode=<Negsignal.SIGKILL: -9>, started='15:21:21') (255) terminated with exit code -9
+[2025-06-29T15:28:03.030+0000] {standard_task_runner.py:178} ERROR - Job 4572 was killed before it finished (likely due to running out of memory)

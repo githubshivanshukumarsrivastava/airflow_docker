@@ -1,0 +1,94 @@
+[2025-06-30T17:53:43.678+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-30T17:53:43.818+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_with_python_dependencies_v01.get_sklearn scheduled__2023-03-09T00:00:00+00:00 [queued]>
+[2025-06-30T17:53:43.833+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_with_python_dependencies_v01.get_sklearn scheduled__2023-03-09T00:00:00+00:00 [queued]>
+[2025-06-30T17:53:43.834+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 1
+[2025-06-30T17:53:43.885+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): get_sklearn> on 2023-03-09 00:00:00+00:00
+[2025-06-30T17:53:43.924+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dag_with_python_dependencies_v01', 'get_sklearn', 'scheduled__2023-03-09T00:00:00+00:00', '--job-id', '4953', '--raw', '--subdir', 'DAGS_FOLDER/dag_with_python_dependencies.py', '--cfg-path', '/tmp/tmpast8tz59']
+[2025-06-30T17:53:43.938+0000] {standard_task_runner.py:91} INFO - Job 4953: Subtask get_sklearn
+[2025-06-30T17:53:43.932+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1581) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-06-30T17:53:43.939+0000] {standard_task_runner.py:63} INFO - Started process 1588 to run task
+[2025-06-30T17:53:44.170+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_with_python_dependencies_v01.get_sklearn scheduled__2023-03-09T00:00:00+00:00 [running]> on host 10ba4c57dcb8
+[2025-06-30T17:53:44.710+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='shivanshu' AIRFLOW_CTX_DAG_ID='dag_with_python_dependencies_v01' AIRFLOW_CTX_TASK_ID='get_sklearn' AIRFLOW_CTX_EXECUTION_DATE='2023-03-09T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-03-09T00:00:00+00:00'
+[2025-06-30T17:53:44.711+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-30T17:53:48.075+0000] {local_task_job_runner.py:124} ERROR - Received SIGTERM. Terminating subprocesses
+[2025-06-30T17:53:48.116+0000] {process_utils.py:132} INFO - Sending 15 to group 1588. PIDs of all processes in the group: [1588]
+[2025-06-30T17:53:48.127+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 1588
+[2025-06-30T17:53:48.735+0000] {taskinstance.py:2607} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-06-30T17:53:48.736+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-30T17:53:48.754+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_with_python_dependencies.py", line 15, in get_sklearn
+    import sklearn
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/__init__.py", line 73, in <module>
+    from .base import clone  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/base.py", line 19, in <module>
+    from .utils._metadata_requests import _MetadataRequester, _routing_enabled
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/__init__.py", line 9, in <module>
+    from ._chunking import gen_batches, gen_even_slices
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/_chunking.py", line 11, in <module>
+    from ._param_validation import Interval, validate_params
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/_param_validation.py", line 17, in <module>
+    from .validation import _is_arraylike_not_scalar
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/validation.py", line 21, in <module>
+    from ..utils._array_api import _asarray_with_order, _is_numpy_namespace, get_namespace
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/_array_api.py", line 20, in <module>
+    from .fixes import parse_version
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/fixes.py", line 16, in <module>
+    import scipy.stats
+  File "/home/airflow/.local/lib/python3.12/site-packages/scipy/stats/__init__.py", line 626, in <module>
+    from ._stats_py import *
+  File "/home/airflow/.local/lib/python3.12/site-packages/scipy/stats/_stats_py.py", line 52, in <module>
+    from . import distributions
+  File "/home/airflow/.local/lib/python3.12/site-packages/scipy/stats/distributions.py", line 8, in <module>
+    from ._distn_infrastructure import (rv_discrete, rv_continuous, rv_frozen)  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/scipy/stats/_distn_infrastructure.py", line 27, in <module>
+    from scipy import integrate
+  File "<frozen importlib._bootstrap>", line 1412, in _handle_fromlist
+  File "/home/airflow/.local/lib/python3.12/site-packages/scipy/__init__.py", line 131, in __getattr__
+    return _importlib.import_module(f'scipy.{name}')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/scipy/integrate/__init__.py", line 112, in <module>
+    from ._cubature import cubature
+  File "/home/airflow/.local/lib/python3.12/site-packages/scipy/integrate/_cubature.py", line 29, in <module>
+    @dataclass
+     ^^^^^^^^^
+  File "/usr/local/lib/python3.12/dataclasses.py", line 1266, in dataclass
+    return wrap(cls)
+           ^^^^^^^^^
+  File "/usr/local/lib/python3.12/dataclasses.py", line 1256, in wrap
+    return _process_class(cls, init, repr, eq, order, unsafe_hash,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dataclasses.py", line 970, in _process_class
+    cls_annotations = inspect.get_annotations(cls)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/inspect.py", line 265, in get_annotations
+    return dict(ann)
+           ^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2609, in signal_handler
+    raise AirflowTaskTerminated("Task received SIGTERM signal")
+airflow.exceptions.AirflowTaskTerminated: Task received SIGTERM signal
+[2025-06-30T17:53:48.770+0000] {taskinstance.py:1205} INFO - Marking task as FAILED. dag_id=dag_with_python_dependencies_v01, task_id=get_sklearn, execution_date=20230309T000000, start_date=20250630T175343, end_date=20250630T175348
+[2025-06-30T17:53:50.263+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=1588, status='terminated', exitcode=2, started='17:53:43') (1588) terminated with exit code 2
+[2025-06-30T17:53:50.265+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 143
+[2025-06-30T17:53:50.389+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-30T17:53:50.539+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,4 @@
+[2025-06-28T11:36:16.321+0000] {task_command.py:416} INFO - Running <TaskInstance: dag_with_taskflow_api_v02.get_age scheduled__2025-02-09T00:00:00+00:00 [None]> on host 07a96c95014f
+[2025-06-28T11:36:16.964+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='coder2j' AIRFLOW_CTX_DAG_ID='dag_with_taskflow_api_v02' AIRFLOW_CTX_TASK_ID='get_age' AIRFLOW_CTX_EXECUTION_DATE='2025-02-09T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-09T00:00:00+00:00'
+[2025-06-28T11:36:16.975+0000] {python.py:194} INFO - Done. Returned value was: 19
+[2025-06-28T11:36:18.626+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=dag_with_taskflow_api_v02, task_id=get_age, execution_date=20250209T000000, start_date=20250628T113613, end_date=20250628T113618
